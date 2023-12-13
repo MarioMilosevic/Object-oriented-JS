@@ -384,8 +384,6 @@
 //   // Private fields
 //   #movements = []
 
-
-
 //   constructor(owner, currency, pin) {
 //     this.owner = owner;
 //     this.currency = currency;
@@ -432,7 +430,6 @@
 // console.log(acc1.getMovements());
 // console.log(acc1);
 // console.log(acc1._pin);
-
 
 // Coding Challenge #4
 
@@ -511,3 +508,34 @@ rivian
 
 console.log(rivian.speedUS);
 */
+// treba nam count i trebaju nam 2 funckije,
+// 1. getCount koja vraca trenutnu vrijednost kaunta
+// 2. koja ce da inkrementuje kaunt za 1
+// 3. da setuje kaunt na koju god vrijednost hocemo
+
+const countCreator = () => {
+  let count = 0;
+  const getCount = () => count;
+  const incrementCount = () => (count += 1);
+  const setCount = (num) => (count = num);
+
+  return {
+    count,
+    getCount,
+    incrementCount,
+    setCount,
+  };
+};
+
+const id = document.querySelector(".id");
+
+let nova = countCreator();
+
+nova.incrementCount()
+nova.incrementCount()
+nova.incrementCount()
+nova.incrementCount()
+
+id.textContent = nova.count;
+
+
