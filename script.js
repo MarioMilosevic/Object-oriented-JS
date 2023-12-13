@@ -544,11 +544,14 @@ const monsterCreator = (monster) => {
   const attack = () => console.log(`${monster} attacks`);
   const kill = () =>
     console.log(`${monster} has killed ${(numberOfKills += 1)}`);
+  const setNumberOfKills = (num) =>
+    console.log(`Number of kills is set to: ${(numberOfKills = num)}`);
 
   return {
     walk,
     attack,
     kill,
+    setNumberOfKills,
   };
 };
 
@@ -560,7 +563,10 @@ mario.kill();
 mario.kill();
 mario.kill();
 mario.kill();
+mario.kill();
 
 milica.walk();
 milica.attack();
 milica.kill();
+
+milica.setNumberOfKills(5);
