@@ -513,29 +513,54 @@ console.log(rivian.speedUS);
 // 2. koja ce da inkrementuje kaunt za 1
 // 3. da setuje kaunt na koju god vrijednost hocemo
 
-const countCreator = () => {
-  let count = 0;
-  const getCount = () => count;
-  const incrementCount = () => (count += 1);
-  const setCount = (num) => (count = num);
+// const countCreator = () => {
+//   let count = 0;
+//   const getCount = () => count;
+//   const incrementCount = () => (count += 1);
+//   const setCount = (num) => (count = num);
+
+//   return {
+//     count,
+//     getCount,
+//     incrementCount,
+//     setCount,
+//   };
+// };
+
+// const id = document.querySelector(".id");
+
+// let nova = countCreator();
+
+// nova.incrementCount();
+// nova.incrementCount();
+// nova.incrementCount();
+// nova.incrementCount();
+
+// id.textContent = nova.count;
+
+const monsterCreator = (monster) => {
+  let numberOfKills = 0;
+  const walk = () => console.log(`${monster} walks`);
+  const attack = () => console.log(`${monster} attacks`);
+  const kill = () =>
+    console.log(`${monster} has killed ${(numberOfKills += 1)}`);
 
   return {
-    count,
-    getCount,
-    incrementCount,
-    setCount,
+    walk,
+    attack,
+    kill,
   };
 };
 
-const id = document.querySelector(".id");
+const mario = monsterCreator("Mario");
+const milica = monsterCreator("Milica");
+mario.attack();
+mario.walk();
+mario.kill();
+mario.kill();
+mario.kill();
+mario.kill();
 
-let nova = countCreator();
-
-nova.incrementCount()
-nova.incrementCount()
-nova.incrementCount()
-nova.incrementCount()
-
-id.textContent = nova.count;
-
-
+milica.walk();
+milica.attack();
+milica.kill();
